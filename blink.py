@@ -17,7 +17,8 @@ print('Reading MCP3008 values, press Ctrl-C to quit...')
 print('| {0:>4} | {1:>4} | {2:>4} | {3:>4} | {4:>4} | {5:>4} | {6:>4} | {7:>4} |'.format(*range(8)))
 print('-' * 57)
 # Main program loop.
+
+GPIO.output(11, 1) # led on
 while True:
-	print("Light sensor: ", mcp.read_adc(0))
-	print("Sound sensor: ", mcp.read_adc(1))
+	print("Light sensor: ", mcp.read_adc(0), "Sound sensor: ", mcp.read_adc(1))
 	time.sleep(0.5)
